@@ -28,19 +28,21 @@ void main() {
 	//if (!scanf("%d", &secondBan))		//TODO: Check if this posotion is possible
 	//	return;
 
-	lineLength = 3;
+	lineLength = 4;
 	lineQuantity = 4;
 	startPosition = 1;
-	finishPosition = 5;
+	finishPosition = 3;
 	firstBan = 2;
 	secondBan = 3;
 
-	arrLength = lineLength * lineQuantity;
+	arrLength = lineLength * lineQuantity - 1;
 	array = malloc(arrLength * sizeof(int));
 	for (int i = 0; i < arrLength; array[i] = 0, ++i);
 	array[firstBan] = 1;
 	array[secondBan] = 1;
-	if (CheckSpot(array, startPosition, finishPosition, lineLength, arrLength)) {
+	if (CheckSpot(array, startPosition-1, finishPosition-1, lineLength, arrLength)) {
+		printf("\narray\n");
+		for (int i = 0; i < arrLength; printf("%d ", array[i]), ++i);
 		PositiveEnd(array, arrLength);
 	}
 	else
