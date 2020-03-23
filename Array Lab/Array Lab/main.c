@@ -36,6 +36,7 @@ void main() {
 
 	arrLength = lineLength * lineQuantity;
 	array = malloc(arrLength*sizeof(int*));
-	//for (int i = 0; i < arrLength; ++i)
-	step(lineLength, startPosition,firstBan,secondBan,finishPosition, arrLength, -1);
+	array[firstBan] = 1;
+	array[secondBan] = 1;
+	step();
 }
