@@ -4,7 +4,8 @@
 #include"util.h"
 
 void main() {
-	int* array, lineLength, lineQuantity, arrLength;
+	int* array;
+	int lineLength, lineQuantity, arrLength;
 	int startPosition, finishPosition, firstBan, secondBan;
 
 
@@ -35,8 +36,13 @@ void main() {
 	secondBan = 3;
 
 	arrLength = lineLength * lineQuantity;
-	array = malloc(arrLength*sizeof(int*));
+	array = malloc(arrLength * sizeof(int));
+	for (int i = 0; i < arrLength; array[i] = 0, ++i);
 	array[firstBan] = 1;
 	array[secondBan] = 1;
-	step();
+	if (CheckSpot(array, startPosition, finishPosition, lineLength, arrLength)) {
+		PositiveEnd(array, arrLength);
+	}
+	else
+		NegativeEnd;
 }
