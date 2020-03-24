@@ -18,15 +18,18 @@
     <ClCompile Include="main.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="other_task.c">
+    <ClCompile Include="util.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="util.c">
+    <ClCompile Include="move.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="util.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="move.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

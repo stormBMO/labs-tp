@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"util.h"
+#include"move.h"
 
 void main() {
 	int* array;
@@ -28,19 +29,20 @@ void main() {
 	//if (!scanf("%d", &secondBan))		//TODO: Check if this posotion is possible
 	//	return;
 
-	lineLength = 4;
-	lineQuantity = 4;
+	lineLength = 3;
+	lineQuantity = 3;
 	startPosition = 1;
 	finishPosition = 3;
 	firstBan = 2;
-	secondBan = 3;
+	secondBan = 4;
 
 	arrLength = lineLength * lineQuantity - 1;
 	array = malloc(arrLength * sizeof(int));
-	for (int i = 0; i < arrLength; array[i] = 0, ++i);
+	for (int i = 0; i < arrLength; ++i)
+		array[i] = 0;
 	array[firstBan] = 1;
 	array[secondBan] = 1;
-	if (CheckSpot(array, startPosition-1, finishPosition-1, lineLength, arrLength)) {
+	if (CheckSpot(array, startPosition, finishPosition, lineLength, arrLength)) {
 		printf("\narray\n");
 		for (int i = 0; i < arrLength; printf("%d ", array[i]), ++i);
 		PositiveEnd(array, arrLength);
