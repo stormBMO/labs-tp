@@ -2,6 +2,6 @@
 #define UTIL_H
 
 void PositiveEnd(int* array, int arrLength);
-void NegativeEnd(int *array);
+void NegativeEnd();
 
 #endif //UTIL_H

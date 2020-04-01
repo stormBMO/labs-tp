@@ -5,10 +5,8 @@ void PositiveEnd(int array[], int arrLength) {
 	for (int i = 0; i < arrLength; ++i)
 		if (array[i] == 2)
 			printf("%d ", i);
-	//free(array);
 }
 
-void NegativeEnd(int array[]) {
+void NegativeEnd() {
 	printf("WHOOOOPSIe");
-	//free(array);
 }

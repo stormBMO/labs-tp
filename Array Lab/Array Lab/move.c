@@ -1,4 +1,6 @@
 int CheckSpot(int* array, int start, int finish, int lineLenght, int arrLength) {
+	if (start <= 0)
+		return 0;
 	if (array[start] == 1)
 		return 0;
 	if (start > arrLength)
@@ -8,55 +10,20 @@ int CheckSpot(int* array, int start, int finish, int lineLenght, int arrLength) 
 		return 1;
 	}
 	array[start] = 1;
-	if (StepRU(start, lineLenght) > 0)
-		if (CheckSpot(array, StepRU(start, lineLenght), finish, lineLenght, arrLength)) {
+	if (CheckSpot(array, StepRU(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepRD(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepDR(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepDL(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepLD(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepLU(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepUR(start, lineLenght), finish, lineLenght, arrLength) ||
+		CheckSpot(array, StepUL(start, lineLenght), finish, lineLenght, arrLength)) {
 			printf("step true: %d\n", start);
 			array[start] = 2;
 			return 1;
-		}
-	if (StepRD(start, lineLenght) > 0)
-		if (CheckSpot(array, StepRD(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
-	if (StepDR(start, lineLenght) > 0)
-		if (CheckSpot(array, StepDR(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
-	if (StepDL(start, lineLenght) > 0)
-		if (CheckSpot(array, StepDL(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
-	if (StepLD(start, lineLenght) > 0)
-		if (CheckSpot(array, StepLD(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
-	if (StepLU(start, lineLenght) > 0)
-		if (CheckSpot(array, StepLU(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
-	if (StepUR(start, lineLenght) > 0)
-		if (CheckSpot(array, StepUR(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
-	if (StepUL(start, lineLenght) > 0)
-		if (CheckSpot(array, StepUL(start, lineLenght), finish, lineLenght, arrLength)) {
-			printf("step true: %d\n", start);
-			array[start] = 2;
-			return 1;
-		}
+	}
 }
+
 
 int StepRU(int position, int lenght) {
 	return position + 3 - lenght;

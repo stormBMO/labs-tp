@@ -48,5 +48,6 @@ void main() {
 		PositiveEnd(array, arrLength);
 	}
 	else
-		NegativeEnd(array);
+		NegativeEnd();
+	free(array);
 }
