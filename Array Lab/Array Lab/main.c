@@ -48,5 +48,5 @@ void main() {
 		PositiveEnd(array, arrLength);
 	}
 	else
-		NegativeEnd;
+		NegativeEnd(array);
 }
