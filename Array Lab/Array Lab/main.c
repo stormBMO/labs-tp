@@ -37,9 +37,7 @@ void main() {
 	secondBan = 4;
 
 	arrLength = lineLength * lineQuantity - 1;
-	array = malloc(arrLength * sizeof(int));
-	for (int i = 0; i < arrLength; ++i)
-		array[i] = 0;
+	array = (int*)calloc(arrLength, sizeof(int));
 	array[firstBan] = 1;
 	array[secondBan] = 1;
 	if (CheckSpot(array, startPosition, finishPosition, lineLength, arrLength)) {
@@ -49,5 +47,5 @@ void main() {
 	}
 	else
 		NegativeEnd();
-	free(array);
+	//free(array);
 }
