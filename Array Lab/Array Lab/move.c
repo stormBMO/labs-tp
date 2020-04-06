@@ -2,11 +2,12 @@
 #include "util.h"
 
 int CheckSpot(cell* array, int start, int finish, int fullLineLenght, int arrLength) {
+	if (start >= arrLength)
+		return 0;
 	if (start < 0)
 		return 0;
+	printf("%d ", start);
 	if (array[start].color == used)
-		return 0;
-	if (start > arrLength)
 		return 0;
 	if (start == finish) {
 		printf("%d ", array[start].idx);
