@@ -31,7 +31,7 @@ void main() {
 	//if (!scanf("%d", &secondBan))		//TODO: Check if this posotion is possible
 	//	return;
 
-	lineLength = 5;
+	lineLength = 2;
 	lineQuantity = 2;
 	startPosition = 1;
 	finishPosition = 7;
