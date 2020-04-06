@@ -1,3 +1,4 @@
+//DO U NOU DE WAY
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
@@ -31,9 +32,9 @@ void main() {
 	//	return;
 
 	lineLength = 5;
-	lineQuantity = 3;
+	lineQuantity = 2;
 	startPosition = 1;
-	finishPosition = 4;
+	finishPosition = 7;
 	firstBan = 13;
 	secondBan = 15;
 
@@ -43,7 +44,7 @@ void main() {
 	Swap(&startPosition, &finishPosition);
 
 	arrLength = (lineLength + lineQuantity) * lineQuantity;
-	if (!(array = (cell*)malloc(arrLength, sizeof(cell)))) {
+	if (!(array = malloc(arrLength * sizeof(cell)))) {
 		return;
 	}
 	
@@ -55,11 +56,12 @@ void main() {
 	startPosition = startPositionStr * (lineLength + lineQuantity) 
 		+ startPositionNum + startPositionStr;
 	//for (int i = 0; i < arrLength; printf("%d ", array[i].idx), ++i);
-	if (CheckSpot(array, startPosition, finishPosition-1, lineLength + lineQuantity, arrLength)) {
+	if (CheckSpot(array, startPosition, finishPosition-1, lineLength + lineQuantity,
+		arrLength)) {
 		printf("Congrats");
 	}
 	else {
-		printf("GG");
+		printf("There is no way");
 	}
 	free(array);
 }

@@ -6,7 +6,6 @@ void InitArray(cell* array, int lineLength, int lineQuantity, int firstBan, int 
 	for(int i = 0; i < lineQuantity; ++i)
 		for (int j = 0; j < lineLength + lineQuantity; ++j) {
 			cur = i * (lineLength + lineQuantity) + j;
-			printf("%d ", cur);
 			if (j < i || j >= i + lineLength) {
 				array[cur].idx = -1;
 				array[cur].color = used;
@@ -20,7 +19,6 @@ void InitArray(cell* array, int lineLength, int lineQuantity, int firstBan, int 
 				array[cur].color = used;
 			}
 		}
-	printf("\n\n\n");
 }
 
 void Swap(int* a, int* b) {

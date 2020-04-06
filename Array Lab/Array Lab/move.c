@@ -6,7 +6,6 @@ int CheckSpot(cell* array, int start, int finish, int fullLineLenght, int arrLen
 		return 0;
 	if (start < 0)
 		return 0;
-	printf("%d ", start);
 	if (array[start].color == used)
 		return 0;
 	if (start == finish) {
