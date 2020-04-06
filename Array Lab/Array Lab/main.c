@@ -4,8 +4,9 @@
 #include"util.h"
 #include"move.h"
 
+
 void main() {
-	int* array;
+	cell* array;
 	int lineLength, lineQuantity, arrLength;
 	int startPosition, finishPosition, firstBan, secondBan;
 
@@ -29,23 +30,36 @@ void main() {
 	//if (!scanf("%d", &secondBan))		//TODO: Check if this posotion is possible
 	//	return;
 
-	lineLength = 3;
+	lineLength = 5;
 	lineQuantity = 3;
 	startPosition = 1;
-	finishPosition = 3;
-	firstBan = 2;
-	secondBan = 4;
+	finishPosition = 4;
+	firstBan = 13;
+	secondBan = 15;
 
-	arrLength = lineLength * lineQuantity - 1;
-	array = (int*)calloc(arrLength, sizeof(int));
-	array[firstBan] = 1;
-	array[secondBan] = 1;
-	if (CheckSpot(array, startPosition, finishPosition, lineLength, arrLength)) {
-		printf("\narray\n");
-		for (int i = 0; i < arrLength; printf("%d ", array[i]), ++i);
-		PositiveEnd(array, arrLength);
+	if (lineLength < 3)
+		return;
+
+	Swap(&startPosition, &finishPosition);
+
+	arrLength = (lineLength + lineQuantity) * lineQuantity;
+	if (!(array = (cell*)malloc(arrLength, sizeof(cell)))) {
+		return;
 	}
-	else
-		NegativeEnd();
-	//free(array);
+	
+	InitArray(array, lineLength, lineQuantity, firstBan, secondBan);
+
+
+	int startPositionStr = (startPosition - 1) / lineLength;
+	int startPositionNum = (startPosition - 1) % lineLength;
+	startPosition = startPositionStr * (lineLength + lineQuantity) 
+		+ startPositionNum + startPositionStr;
+	//for (int i = 0; i < arrLength; printf("%d ", array[i].idx), ++i);
+	if (CheckSpot(array, startPosition, finishPosition-1, lineLength + lineQuantity, arrLength)) {
+		printf("Congrats");
+	}
+	else {
+		printf("GG");
+	}
+	free(array);
 }

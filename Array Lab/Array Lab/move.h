@@ -1,7 +1,7 @@
 #ifndef MOVE_H
 #define MOVE_H
 
-int CheckSpot(int* array, int start, int finish, int lineLenght, int arrLength);
+int CheckSpot(cell* array, int start, int finish, int lineLenght, int arrLength);
 int StepRU(int position, int lenght);
 int StepRD(int position, int lenght);
 int StepDR(int position, int lenght);
