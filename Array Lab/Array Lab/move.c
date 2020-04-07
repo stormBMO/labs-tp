@@ -16,12 +16,13 @@ int CheckSpot(cell* array, int start, int finish, int fullLineLenght, int arrLen
 		return 0;
 	if (array[start].color == used) // it means, that we were in this cell
 		return 0;
-	if (start == finish) { // we`ve found finish
+	if (start == finish) { // we`ve found finish, so we need to print it and go out from recursion
 		printf("%d ", array[start].idx);
 		array[start].color = used;
 		return 1;
 	}
 	array[start].color = used;
+	// doing the same thing with other props
 	if (CheckSpot(array, StepRU(start, fullLineLenght), finish, fullLineLenght, arrLength) ||
 		CheckSpot(array, StepRD(start, fullLineLenght), finish, fullLineLenght, arrLength) ||
 		CheckSpot(array, StepDR(start, fullLineLenght), finish, fullLineLenght, arrLength) ||
@@ -38,34 +39,35 @@ int CheckSpot(cell* array, int start, int finish, int fullLineLenght, int arrLen
 
 
 
-
-int StepRU(int position, int lenght) { // return Step Right Up
+// return position after Step Right Up
+int StepRU(int position, int lenght) { 
 	return position + 2 - lenght;
 }
-
-int StepRD(int position, int lenght) { // return Step Right Down
+// return position after Step Right Down
+int StepRD(int position, int lenght) { 
 	return position + 2 + lenght;
 }
-
-int StepDR(int position, int lenght) { // return Step Down Right
+// return position after Step Down Right
+int StepDR(int position, int lenght) {
 	return position + 1 + 2 * lenght;
 }
-
-int StepDL(int position, int lenght) { // return Step Down Left
+// return position after Step Down Left
+int StepDL(int position, int lenght) { 
 	return position - 1 + 2 * lenght;
 }
-
-int StepLU(int position, int lenght) { // return Step Left Up
+// return position after Step Left Up
+int StepLU(int position, int lenght) {
 	return position - 2 - lenght;
 }
-int StepLD(int position, int lenght) { // return Step Right Up
+// return position after Step Right Up
+int StepLD(int position, int lenght) {
 	return position + 2 + lenght;
 }
-
-int StepUR(int position, int lenght) { // return Step Up Right
+// return position after Step Up Right
+int StepUR(int position, int lenght) { 
 	return position + 1 - 2 * lenght;
 }
-
-int StepUL(int position, int lenght) { // return Step Up Left
+// return position after Step Up Left
+int StepUL(int position, int lenght) { 
 	return position - 1 - 2 * lenght;
 }

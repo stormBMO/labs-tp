@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include"util.h"
 
-// Initialization our massive
+// Initialization our custom massive (field)
 // This function gets:
 // 1. cell* array - Cell`s array (for Initializating it)
 // 2. lineLength - User`s length of single line 
@@ -28,6 +28,8 @@ void InitArray(cell* array, int lineLength, int lineQuantity, int firstBan, int 
 		}
 }
 
+
+// Swaps two integers
 void Swap(int* a, int* b) {
 	int c = *a;
 	*a = *b;
