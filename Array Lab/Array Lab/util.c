@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include"util.h"
 
@@ -28,6 +29,30 @@ void InitArray(cell* array, int lineLength, int lineQuantity, int firstBan, int 
 		}
 }
 
+
+// Initializating props
+int InitProps(int* lineLength, int* lineQuantity, 
+	int* startPosition, int* finishPosition, int* firstBan, int* secondBan) {
+		printf("Line Length\n");
+		if (!scanf("%d", lineLength))
+			return 0;
+		printf("Line Quantity\n");
+		if (!scanf("%d", lineQuantity))
+			return 0;
+		printf("Start Position:\n");
+		if (!scanf("%d", startPosition))
+			return 0;
+		printf("Last Position:\n");
+		if (!scanf("%d", finishPosition))
+			return 0;
+		printf("First Ban:\n");
+		if (!scanf("%d", firstBan))
+			return 0;
+		printf("Second Ban:\n");
+		if (!scanf("%d", secondBan))
+			return 0;
+		return 1;
+}
 
 // Swaps two integers
 void Swap(int* a, int* b) {
