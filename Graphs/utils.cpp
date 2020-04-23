@@ -25,16 +25,6 @@ int MatrixInput(vector<vector<int>>& matrix){
     return 0;
 }
 
-int MatrixInit(vector<vector<int>>& matrix){
-    for(int i = 0; i < matrix.size(); ++i){
-        matrix[i].resize(matrix.size());
-        for(int j = 0; j < matrix.size();++j)
-            matrix[i][j] = INF;
-    }
-    matrix[0][0] = 0;
-    return 0;
-}
-
 int MatrixOutput(const vector<vector<int>>& matrix){
     cout << matrix.size() << endl;
     for (int i = 0; i < matrix.size(); ++i){
