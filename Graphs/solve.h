@@ -2,4 +2,5 @@
 #include <vector>
 using namespace std;
 
-int DijkstraAlgorithm(const vector<vector<int>>& matrix);
+int FloydAlgorithm(vector<vector<int>>& matrix);
+int FindMinInMax(const vector<vector<int>>& matrix);
