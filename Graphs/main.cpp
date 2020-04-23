@@ -12,12 +12,16 @@
 using namespace std;
 
 int main(){
-    int vertrexesAmount;
-    cout << "Enter amount of vertexes:" << endl;
-    cin >> vertrexesAmount;
-    vector<vector<int>> matrix (vertrexesAmount, vector<int> (vertrexesAmount, INF));
-    MatrixInput(matrix);
-    FloydAlgorithm(matrix);
-    cout << FindMinInMax(matrix) << endl;
+    int verticesAmount;
+    cout << "Enter amount of vertices:" << endl;
+    cin >> verticesAmount;
+    //creating matrix of adjacency matrix and filling out it with INF
+    vector<vector<int>> mainMatrix (verticesAmount, vector<int> (verticesAmount, INF));
+    //initializating adjacency matrix
+    MatrixInput(mainMatrix);
+    //using Floyd-Warshall algorithm to find shortest paths between vertices
+    FloydAlgorithm(mainMatrix);
+    //outputing result
+    cout << FindMinInMax(mainMatrix) << endl;
     return 1;
 } 
