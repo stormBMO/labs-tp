@@ -23,6 +23,7 @@ int main(){
     vector<vector<int>> mainMatrix (verticesAmount, vector<int> (verticesAmount, INF));
     //initializating adjacency matrix
     MatrixInput(mainMatrix);
+    MatrixOutput(mainMatrix);
     //using Floyd-Warshall algorithm to find shortest paths between vertices
     FloydAlgorithm(mainMatrix);
     //outputing result
