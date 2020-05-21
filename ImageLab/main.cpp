@@ -7,7 +7,12 @@
 using namespace std;
 
 int main(){
-     vector<vector<int>> mainMatrix; //main image (matrix of pixels [0 - 255])
+     int size;
+     cout << "Enter size of Matrix:" << endl;
+     cin >> size;
+     //main image (matrix of pixels [0 - 255])
+     vector<vector<pair<int, int>>> mainMatrix(size, vector<pair<int,int>> (size, {0,0})); 
+     MatrixOutput(mainMatrix);
      MatrixInput(mainMatrix);
      MatrixOutput(mainMatrix);
      return 0;
