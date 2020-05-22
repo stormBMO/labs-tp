@@ -7,18 +7,17 @@
 using namespace std;
 
 
-int DFS(const int& start, vector<vector<int>> matrix, const int& color){
-    stack<int> s;
-    vector<int> mark(matrix[0].size(), 0);
-    s.push(start);
+int DFS(const int& start, vector<vector<pair<int, int>>>& matrix, const int& color){
+    stack<pair<int,int>> s;
+    s.push({start, 0});
     while (!s.empty()) {
-        int v = s.top();
+        pair<int, int> v = s.top();
         s.pop();
-        for (int i = 0; i < matrix[v].size(); ++i){
-            if (mark[matrix[v][i]] == 0 && matrix[v][i] == start){
-                s.push(matrix[v][i]);
-                mark[matrix[v][i]] = 1;
-                matrix[v][i] = color;
+        for (int i = 0; i < matrix[v.first].size(); ++i){
+            if (matrix[v.first][i].second == 0 && matrix[v.first][i].first == start){
+                s.push(matrix[v.first][i]);
+                matrix[v.first][i].second = 1;
+                matrix[v.first][i].first = color;
             }
         }
     }
