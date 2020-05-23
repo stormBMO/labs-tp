@@ -8,11 +8,11 @@ using namespace std;
 
 int AddToStack(const int& cur, const int& idx, stack<pair<int,int>>& sDFS,
                             const vector<vector<pair<int, int>>>& matrix){
-    if(cur - 1 > 0)
+    if(cur - 1 >= 0)
         sDFS.push({cur - 1,idx});
     if(cur + 1 < matrix[0].size())
         sDFS.push({cur + 1, idx});
-    if(idx - 1 > 0)
+    if(idx - 1 >= 0)
         sDFS.push({cur, idx - 1});
     if(idx + 1 < matrix[0].size())
         sDFS.push({cur, idx + 1});
