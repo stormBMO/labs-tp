@@ -6,20 +6,32 @@
 
 using namespace std;
 
+int AddToStack(const int& cur, const int& idx, stack<pair<int,int>>& sDFS,
+                            const vector<vector<pair<int, int>>>& matrix){
+    if(cur - 1 > 0)
+        sDFS.push({cur - 1,idx});
+    if(cur + 1 < matrix[0].size())
+        sDFS.push({cur + 1, idx});
+    if(idx - 1 > 0)
+        sDFS.push({cur, idx - 1});
+    if(idx + 1 < matrix[0].size())
+        sDFS.push({cur, idx + 1});
+    return 0;
+}
 
-int DFS(const int& start, vector<vector<pair<int, int>>>& matrix, const int& color){
-    stack<pair<int,int>> s;
-    s.push({start, 0});
-    while (!s.empty()) {
-        int v = s.top().first;
-        s.pop();
-        for (int i = 0; i < matrix[v].size()*matrix[v].size(); ++i){
-            if (matrix[v][i].second == 0){
-                s.push(matrix[v][i]);
-                matrix[v][i].second = 1;
-                matrix[v][i].first = color;
-            }
+int DFS(const int& iStart, const int& jStart, vector<vector<pair<int, int>>>& matrix, const int& color){
+    stack<pair<int,int>> sDFS;
+    int saveValue = matrix[iStart][jStart].first;
+    sDFS.push({iStart, jStart});
+    while (!sDFS.empty()){
+        pair<int, int> current = sDFS.top();
+        sDFS.pop();
+        if (matrix[current.first][current.second].second == 0 
+            && matrix[current.first][current.second].first == saveValue){
+            AddToStack(current.first, current.second, sDFS, matrix);
+            matrix[current.first][current.second].second = 1;
+            matrix[current.first][current.second].first = color;
         }
     }
-    return 0;
+    return 0; 
 }

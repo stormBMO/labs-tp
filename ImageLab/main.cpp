@@ -17,7 +17,7 @@ int main(){
           return 0;
      if(InputData(iIndex, jIndex, color))
           return 0;
-     DFS(mainMatrix[iIndex][jIndex].first, mainMatrix, color);
+     DFS(iIndex, jIndex, mainMatrix, color);
      MatrixOutput(mainMatrix);
      return 0;
 }
