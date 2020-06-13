@@ -10,6 +10,7 @@
                 "${fileDirname}/main.cpp",
                 "${fileDirname}/utils.cpp",
                 "${fileDirname}/solve.cpp",
+                "${fileDirname}/stack.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
