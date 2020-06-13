@@ -9,8 +9,7 @@
                 "-g",
                 "${fileDirname}/main.cpp",
                 "${fileDirname}/utils.cpp",
-                "${fileDirname}/solve.cpp",
-                "${fileDirname}/stack.cpp",
+                "${fileDirname}/adfs.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

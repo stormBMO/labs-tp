@@ -1,9 +1,10 @@
 #include <vector>
 #include <stack>
+#include "stack.h"
 
 using namespace std;
 
-int AddToStack(const int& cur, const int& idx, stack<pair<int,int>>& sDFS,
+int AddToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
                             const vector<vector<pair<int, int>>>& matrix);
 
 //Non-recurcion Depth-first search algorithm

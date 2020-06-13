@@ -28,7 +28,6 @@ int MatrixInput(vector<vector<pair<int, int>>>& matrix){
 //Output matrix
 //Takes a matrix as an argument (vector<vector<pair<int, int>>>)
 int MatrixOutput(const vector<vector<pair<int, int>>>& matrix){
-    cout << matrix.size() << endl;
     for (int i = 0; i < matrix.size(); ++i){
         for (int j = 0; j < matrix.size(); ++j){
             cout << matrix[i][j].first << " ";

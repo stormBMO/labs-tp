@@ -1,15 +1,14 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
 class StackException {
     public:
-        StackException(string s) : str(s) {}
+        StackException(std::string s) : str(s) {}
         ~StackException() {}
         void what() {
-            cout << str << endl;
+            std::cout << str << std::endl;
         }
 
     private:
-        string str;
+        std::string str;
 };
