@@ -49,7 +49,7 @@ bool InputData(int& iIndex, int& jIndex, int& color){
     if(!(cin >> jIndex))
         return EXIT_FAILED;
     cout << "Enter color:" << endl;
-    if(!(cin >> color))
+    if(!(cin >> color) || color > 255 || color < 0)
         return EXIT_FAILED;
     return EXIT_SUCCESSED;
 }

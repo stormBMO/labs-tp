@@ -41,22 +41,22 @@ void Stack<T>::push(const T& obj) {
 
 template <class T>
 T Stack<T>::pop() {
-    if ( !isEmpty() ) {
+    if (!isEmpty()) {
         StackNode *topNode = top;
         top = top->next;
         T data = topNode->data;
         delete topNode;
         return data;
     }
-    // throw StackException ("Empty Stack");
+    return null;
 }
 
 template <class T>
 const T& Stack<T>::topElement() {
-    if ( !isEmpty() ) {
+    if (!isEmpty()) {
         return top->data;
     }
-    // throw StackException ("Empty Stack");
+    return null;
 }
 
 template <class T>

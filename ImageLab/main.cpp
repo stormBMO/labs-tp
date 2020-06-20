@@ -13,11 +13,14 @@ int main(){
      cin >> size;
      //main image (matrix of pixels [0 - 255])
      vector<vector<pair<int, int>>> mainMatrix(size, vector<pair<int,int>> (size, {0,0})); 
-     if(MatrixInput(mainMatrix))
+     //input data to our matrix
+     if(matrixInput(mainMatrix))
           return 0;
-     if(InputData(iIndex, jIndex, color))
+     if(inputData(iIndex, jIndex, color))
+          return 0;
+     if(iIndex > size || jIndex > size)
           return 0;
      DFS(iIndex, jIndex, mainMatrix, color);
-     MatrixOutput(mainMatrix);
+     matrixOutput(mainMatrix);
      return 0;
 }

@@ -6,10 +6,7 @@
 
 using namespace std;
 
-//Add neighboring cells to stack (if possible) to check it later in algorithm
-//Takes cur position(int, int), Stack(Stack <pair<int,int>>) and matrix(vector<vector<pair<int, int>>>)
-//as an argument
-int AddToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
+int addToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
                             const vector<vector<pair<int, int>>>& matrix){
     if(cur - 1 >= 0)
         sDFS.push({cur - 1,idx});
@@ -36,7 +33,7 @@ int DFS(const int& iStart, const int& jStart, vector<vector<pair<int, int>>>& ma
         //if this cell wasn`t colored and its our pixel, we`re adding neighboring cells to stack
         if (matrix[current.first][current.second].second == 0 
         && matrix[current.first][current.second].first == saveValue){
-            AddToStack(current.first, current.second, sDFS, matrix);
+            addToStack(current.first, current.second, sDFS, matrix);
             matrix[current.first][current.second].second = 1;
             matrix[current.first][current.second].first = color;
         }
