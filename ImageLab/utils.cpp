@@ -37,6 +37,8 @@ int MatrixOutput(const vector<vector<pair<int, int>>>& matrix){
     return 0;
 }
 
+//Input for this specify task
+//Takes 3 int as an argument
 int InputData(int& iIndex, int& jIndex, int& color){
     cout << "Enter i:" << endl;
     if(!(cin >> iIndex))

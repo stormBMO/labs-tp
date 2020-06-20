@@ -1,8 +1,6 @@
-#ifndef _STACK_H_
-#define _STACK_H_
+#pragma once
 
 #include <iostream>
-#include "exception.h"
 
 template <class T>
 class Stack {
@@ -50,7 +48,7 @@ T Stack<T>::pop() {
         delete topNode;
         return data;
     }
-    throw StackException ("Empty Stack");
+    // throw StackException ("Empty Stack");
 }
 
 template <class T>
@@ -58,13 +56,10 @@ const T& Stack<T>::topElement() {
     if ( !isEmpty() ) {
         return top->data;
     }
-    throw StackException ("Empty Stack");
+    // throw StackException ("Empty Stack");
 }
 
 template <class T>
 bool Stack<T>::isEmpty() {
     return top == 0;
 }
-
-
-#endif 
