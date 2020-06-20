@@ -6,6 +6,9 @@
 
 using namespace std;
 
+//Add vector`s values to stack(if possible)
+//Takes int, int, Stack(Stack <pair<int,int>>) and matrix(vector<vector<pair<int, int>>>)
+//as an argument
 int AddToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
                             const vector<vector<pair<int, int>>>& matrix);
 

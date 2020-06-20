@@ -6,6 +6,9 @@
 
 using namespace std;
 
+//Add neighboring cells to stack (if possible) to check it later in algorithm
+//Takes cur position(int, int), Stack(Stack <pair<int,int>>) and matrix(vector<vector<pair<int, int>>>)
+//as an argument
 int AddToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
                             const vector<vector<pair<int, int>>>& matrix){
     if(cur - 1 >= 0)
@@ -19,13 +22,18 @@ int AddToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
     return 0;
 }
 
+//Optimized DFS algorithm (with stack) for current task
+//Takes start position (int, int), matrix(vector<vector<pair<int, int>>>) and color (int). 
 int DFS(const int& iStart, const int& jStart, vector<vector<pair<int, int>>>& matrix, const int& color){
     Stack <pair<int,int>> sDFS;
     int saveValue = matrix[iStart][jStart].first;
     sDFS.push({iStart, jStart});
+    //while stack isn`t empty, we are doing an algorithm
     while (!sDFS.isEmpty()){
+        //get top cell from stack and pop it
         pair<int, int> current = sDFS.topElement();
         sDFS.pop();
+        //if this cell wasn`t colored and its our pixel, we`re adding neighboring cells to stack
         if (matrix[current.first][current.second].second == 0 
         && matrix[current.first][current.second].first == saveValue){
             AddToStack(current.first, current.second, sDFS, matrix);
