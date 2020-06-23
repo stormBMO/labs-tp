@@ -21,7 +21,7 @@ class Stack {
     private:
         struct StackNode {              
             T data;                     
-            StackNode *next;            
+            StackNode *next;         
             StackNode(const T& newData, StackNode *nextNode)
                 : data(newData), next(nextNode) {}
         };
@@ -48,7 +48,7 @@ T Stack<T>::pop() {
         delete topNode;
         return data;
     }
-    return null;
+    throw std::out_of_range("Pop: empty stack");
 }
 
 template <class T>
@@ -56,7 +56,7 @@ const T& Stack<T>::topElement() {
     if (!isEmpty()) {
         return top->data;
     }
-    return null;
+    throw std::out_of_range("Top: empty stack");
 }
 
 template <class T>

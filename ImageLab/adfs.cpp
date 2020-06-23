@@ -29,7 +29,11 @@ int DFS(const int& iStart, const int& jStart, vector<vector<pair<int, int>>>& ma
     while (!sDFS.isEmpty()){
         //get top cell from stack and pop it
         pair<int, int> current = sDFS.topElement();
-        sDFS.pop();
+        try {
+            sDFS.pop();
+        } catch(const std::out_of_range& e){
+            std::cerr << e.what() << '\n';
+        }
         //if this cell wasn`t colored and its our pixel, we`re adding neighboring cells to stack
         if (matrix[current.first][current.second].second == 0 
         && matrix[current.first][current.second].first == saveValue){

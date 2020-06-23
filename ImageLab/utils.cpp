@@ -14,7 +14,7 @@ using namespace std;
 
 //Initializating image`s matrix
 //Takes a matrix as an argument (vector<vector<pair<int, int>>>)
-bool MatrixInput(vector<vector<pair<int, int>>>& matrix){
+bool matrixInput(vector<vector<pair<int, int>>>& matrix){
     cout << "Enter matrix ([0-255] values only):" << endl;
     for (size_t i = 0; i < matrix.size(); ++i)
         for (size_t j = 0; j < matrix.size(); ++j){
@@ -29,7 +29,7 @@ bool MatrixInput(vector<vector<pair<int, int>>>& matrix){
 
 //Output matrix
 //Takes a matrix as an argument (vector<vector<pair<int, int>>>)
-int MatrixOutput(const vector<vector<pair<int, int>>>& matrix){
+int matrixOutput(const vector<vector<pair<int, int>>>& matrix){
     for (int i = 0; i < matrix.size(); ++i){
         for (int j = 0; j < matrix.size(); ++j){
             cout << matrix[i][j].first << " ";
@@ -41,7 +41,7 @@ int MatrixOutput(const vector<vector<pair<int, int>>>& matrix){
 
 //Input for this specify task
 //Takes 3 int as an argument
-bool InputData(int& iIndex, int& jIndex, int& color){
+bool inputData(int& iIndex, int& jIndex, int& color){
     cout << "Enter i:" << endl;
     if(!(cin >> iIndex))
         return EXIT_FAILED;
