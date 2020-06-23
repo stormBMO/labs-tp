@@ -6,6 +6,9 @@
 
 using namespace std;
 
+//Add neighboring cells to stack (if possible) to check it later in algorithm
+//Takes cur position(int, int), Stack(Stack <pair<int,int>>) and matrix(vector<vector<pair<int, int>>>)
+//as an argument
 int addToStack(const int& cur, const int& idx, Stack <pair<int,int>>& sDFS,
                             const vector<vector<pair<int, int>>>& matrix){
     if(cur - 1 >= 0)
